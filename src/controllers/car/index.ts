@@ -5,7 +5,7 @@ import { catchAsync } from '@/middlewares';
 import { AppResponse } from '@/common/utils';
 
 export const createCar = catchAsync(async (req: AuthRequest, res: Response) => {
-  const { brand, model, price, year, category } = req.body;
+  const { brand, model, price, year, category, quantity } = req.body;
 
   const car = await Car.create({
     brand,
@@ -13,7 +13,9 @@ export const createCar = catchAsync(async (req: AuthRequest, res: Response) => {
     price,
     year,
     category,
+    quantity,
     createdBy: req.userId,
+    available: true
   });
 
   AppResponse(res, 201, car, 'Car created successfully');

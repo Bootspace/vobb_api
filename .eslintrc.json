@@ -2,7 +2,8 @@
 	"root": true,
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"project": "./tsconfig.json"
+		"project": "./tsconfig.json",
+		"exclude": ["playground-1.mongodb.js"]
 	},
 	"plugins": ["@typescript-eslint"],
 	"extends": [

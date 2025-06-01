@@ -17,7 +17,7 @@ export const seedUsers = catchAsync(async (req, res) => {
 
 	for (let i = 0; i < size; i++) {
 		usersToSeed.push({
-			name: faker.internet.userName(),
+			name: faker.person.fullName(),
 			email: faker.internet.email(),
 			password: faker.internet.password(),
 		});

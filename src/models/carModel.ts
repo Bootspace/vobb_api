@@ -7,6 +7,7 @@ export interface ICar extends Document {
   price: number;
   year: number;
   available: boolean;
+  quantity: number;
   category: Types.ObjectId;
   createdBy: Types.ObjectId;
   createdAt: Date;
@@ -18,6 +19,7 @@ const CarSchema = new Schema<ICar>({
   price: { type: Number, required: true },
   year: { type: Number, required: true },
   available: { type: Boolean, default: true },
+  quantity: { type: Number, required: true, default: 0 },
   category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
   createdBy: { type: Schema.Types.ObjectId, ref: 'Manager', required: true },
   createdAt: { type: Date, default: Date.now },
